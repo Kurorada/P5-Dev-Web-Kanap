@@ -4,7 +4,6 @@ async function init() {
   const container = document.getElementById("items");
   for (let i = 0; i < productList.length; i++) {
     let product = productList[i];
-    console.log(product);
     let a = document.createElement("a");
     let article = document.createElement("article");
     let img = document.createElement("img");
@@ -15,6 +14,10 @@ async function init() {
     let description = document.createElement("p");
     description.innerText = product.description;
 
+    let id = product._id;
+
+    let url = "http://127.0.0.1:5500/front/html/product.html?id=" + id;
+    a.href = url;
     article.appendChild(img);
     article.appendChild(name);
     article.appendChild(description);
